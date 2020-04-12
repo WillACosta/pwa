@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Ionic App</title>
+
+  <base href="/" />
+
+  <meta name="color-scheme" content="light dark" />
+  <meta name="viewport"
+    content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+
+  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+</head>
+
+<body>
+  <app-root></app-root>
+
+  <!-- <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js').then(function (registration) {
+          // Registration was successful
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function (err) {
+          // registration failed :(
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+  </script> -->
+
+  <!-- <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+  <script>
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(function () {
+      OneSignal.init({
+        appId: "a2b009ac-c83a-4f12-b818-27ef2b0ee0ab",
+      });
+    });
+  </script> -->
+
+  <script>
+    document.addEventListener('DOMcontentLoaded', function () {
+      if (!Notification) {
+        alert("Isso não funcionou!");
+        return;
+      }
+
+      if (Notification.permission !== "granted") {
+        Notification.requestPermission();
+
+        var notification = new Notification("You are Online!", {
+          icon: 'assets/icon.png',
+          body: "Está navegando online...",
+          vibrate: [200, 100, 200, 100, 200, 100, 200]
+        });
+      }
+
+      function isOnline() {
+        if (navigator.onLine) {
+          var notification = new Notification("You are Online!", {
+            icon: 'assets/icon.png',
+            body: "Está navegando online...",
+            vibrate: [200, 100, 200, 100, 200, 100, 200]
+          });
+
+          var photos = JSON.parse(localStorage.getItem('photos'));
+          photos.forEach(element => {
+            console.log(element.title);
+          });
+
+        }else{
+          var notification = new Notification("You not Online!", {
+          icon: 'assets/icon.png',
+          body: "Está navegando online...",
+          vibrate: [200, 100, 200, 100, 200, 100, 200]
+        });
+        }
+      }
+
+      window.addEventListener('online', isOnline);
+      window.addEventListener('offline', isOnline);
+
+    });
+  </script>
+
+</body>
+
+</html>

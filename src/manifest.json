@@ -1,0 +1,17 @@
+{
+    "name": "PWA",
+    "short_name": "PWA",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "/",
+    "icons": [{
+        "src": "assets/imgs/logo.png",
+        "sizes": "72x72",
+        "type": "image/png"
+    }],
+    "background_color": "#3897f0",
+    "theme_color": "#3897f0",
+    "splash_pages": null
+    ,"gcm_sender_id": "482941778795"
+}

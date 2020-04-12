@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title class="ion-text-center dosis">Início</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" type="icon-on" shape="round"
+      (click)="presentModal()">
+        <ion-icon slot="icon-only" name="camera"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" size-sm>
+        <ion-card class="animated zoomIn">
+          <ion-card-header>
+            <img src="https://picsum.photos/512/512" alt="" />
+          </ion-card-header>
+          <ion-card-content>
+            <ion-card-title>Awesome Title</ion-card-title>
+            <ion-card-subtitle>Nothing to view...</ion-card-subtitle>
+            <p>
+              <small>Posted in ../../.. 00:00 by <strong>willAc</strong></small>
+            </p>
+          </ion-card-content>
+          <ion-row class="">
+            <ion-col size="12">
+              <ion-button
+                expand="small"
+                fill="clear"
+                shape="round"
+                color="danger"
+              >
+                <ion-icon slot="start" name="pin"></ion-icon> Ver no mapa
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+
+        <ion-card *ngFor="let item of items" class="animated zoomIn">
+          <ion-card-header>
+            <img src="{{ item.image }}" class="{{ item.filter }}"/>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-card-title>{{ item.title }}</ion-card-title>
+            <ion-card-subtitle>{{ item.message }}</ion-card-subtitle>
+            <p>
+              <small>Posted in {{ item.date }} by <strong>{{ item.user }}</strong></small>
+            </p>
+          </ion-card-content>
+          <ion-row class="">
+            <ion-col size="12">
+              <ion-button
+                *ngIf="item.local != ''"
+                expand="small"
+                fill="clear"
+                shape="round"
+                color="danger"
+                (click)="showMap(item.local)"
+              >
+                <ion-icon slot="start" name="pin"></ion-icon> Ver no mapa
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "cursopwa-c4c4e": {
+      "hosting": {
+        "app": [
+          "cursopwa-c4c4e"
+        ]
+      }
+    }
+  }
+}

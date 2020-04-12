@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title class="dosis">Cadastre-se</ion-title>
+  </ion-toolbar>
+ </ion-header>
+
+<ion-content padding>
+  <ion-grid fixed>
+    <ion-row class="ion-align-items-center">
+      <ion-col col-12 col-sm-12 col-md-6>
+        <br /><br />
+        <form [formGroup]="form">
+          <ion-list lines="none">
+            <ion-item>
+              <ion-input type="email" placeholder="E-mail" formControlName="email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="password" placeholder="Senha" formControlName="password"></ion-input>
+            </ion-item>
+          </ion-list>
+        </form>
+        <ion-button  expand="block" color="primary" (click)="onSubmit()" routerDirection="root">
+          Cadastrar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<!-- [disabled]="!form.valid" -->
+
+<ion-footer>
+  <ion-toolbar class="ion-text-align-center">
+    <ion-buttons slot="start">
+      <ion-button>
+        <!-- <ion-icon slot="start" name="add"></ion-icon> -->
+        <small>Já possui uma conta?&nbsp;<strong routerLink="/login">Entrar</strong></small>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

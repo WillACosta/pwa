@@ -1,0 +1,63 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+/* My imports
+ */
+
+ @import url('https://fonts.googleapis.com/css?family=Dosis|Fira+Sans&display=swap');
+ @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css');
+ @import url('https://cdnjs.cloudflare.com/ajax/libs/cssgram/0.1.10/cssgram.min.css');
+
+
+ion-content{
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.auto-scroll .scroll-content{
+    overflow: auto;
+}
+
+.dosis{
+    font-family: 'Dosis', sans-serif;
+}
+
+
+
+ion-button{
+    font-size: 0.8em;
+}
+
+.sc-ion-input-md{
+    border: none;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+ion-input:focus{
+    border: none;
+    box-shadow: none;
+}

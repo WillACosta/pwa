@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center dosis">Editar Fotografia</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()" fill="clear" type="icon-on" shape="round">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides mode="ios" pager="ios" scrollbar="ios" (ionSlideDidChange)="changeFilter()">
+    <ion-slide class="ionic-text-center" *ngFor="let filter of filters">
+      <img src="{{ photoUrl }}" class="{{ filter }}" height="100%"><br>
+    </ion-slide>
+    <!-- <ion-slide class="ionic-text-center" *ngFor="let filter of filters">
+      <img src="https://picsum.photos/512/512" class="{{ filter }}"><br>
+    </ion-slide> -->
+  </ion-slides>
+
+  <ion-card-content>
+    <form [formGroup]="form">
+      <ion-list lines="none">
+        <ion-item>
+          <ion-input formControlName="title" type="text" placeholder="Title" maxlenght="15"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-textarea formControlName="message" placeholder="Message" rows="3"></ion-textarea>
+        </ion-item>
+      </ion-list>
+    </form>
+  </ion-card-content>
+
+  <ion-row>
+    <ion-col size="12">
+      <ion-button (click)="getLocal()" color="danger" expand="block" fill="clear" shape="square" *ngIf="local == ''">
+        <ion-icon slot="start" name="pin"></ion-icon>
+        Usar localização
+      </ion-button>
+      <ion-button color="danger" expand="block" fill="clear" shape="square" *ngIf="local != ''">
+        <ion-icon slot="start" name="pin"></ion-icon>
+        {{ local }}
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <div>
+    <ion-button (click)="onSubmit()" expand="block" color="primary" fill="solid" size="large">
+      Enviar
+      <ion-icon slot="end" name="send"></ion-icon>
+    </ion-button>
+  </div>
+
+</ion-content>

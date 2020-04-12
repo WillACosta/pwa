@@ -1,0 +1,8 @@
+{
+  "name": "icarus",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
