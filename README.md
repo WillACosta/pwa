@@ -1,6 +1,6 @@
 <h1 align="center">PWA App</h1>
 <p align-"center">
-  <img src="https://i.imgur.com/7nVoGco.jpg" />
+  <img src="https://i.imgur.com/7nVoGco.jpg"/>
 </p>
 
 Aplicação Progressive Web App (PWA) desenvolvida com ionic, angular e firebase, tire uma fotografia e escolha algum filtro para ela, faça uma descrição e marque a sua localização.
