@@ -2,8 +2,7 @@
   <ion-toolbar color="dark">
     <ion-title class="ion-text-center dosis">Início</ion-title>
     <ion-buttons slot="end">
-      <ion-button fill="clear" type="icon-on" shape="round"
-      (click)="presentModal()">
+      <ion-button fill="clear" type="icon-on" shape="round" (click)="presentModal()">
         <ion-icon slot="icon-only" name="camera"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -19,20 +18,15 @@
             <img src="https://picsum.photos/512/512" alt="" />
           </ion-card-header>
           <ion-card-content>
-            <ion-card-title>Awesome Title</ion-card-title>
-            <ion-card-subtitle>Nothing to view...</ion-card-subtitle>
+            <ion-card-title>Fotografia</ion-card-title>
+            <ion-card-subtitle>Apenas uma descrição</ion-card-subtitle>
             <p>
-              <small>Posted in ../../.. 00:00 by <strong>willAc</strong></small>
+              <small>Fotografada em ../../.. 00:00 por <strong>usuário</strong></small>
             </p>
           </ion-card-content>
           <ion-row class="">
             <ion-col size="12">
-              <ion-button
-                expand="small"
-                fill="clear"
-                shape="round"
-                color="danger"
-              >
+              <ion-button expand="small" fill="clear" shape="round" color="danger">
                 <ion-icon slot="start" name="pin"></ion-icon> Ver no mapa
               </ion-button>
             </ion-col>
@@ -41,25 +35,19 @@
 
         <ion-card *ngFor="let item of items" class="animated zoomIn">
           <ion-card-header>
-            <img src="{{ item.image }}" class="{{ item.filter }}"/>
+            <img src="{{ item.image }}" class="{{ item.filter }}" />
           </ion-card-header>
           <ion-card-content>
             <ion-card-title>{{ item.title }}</ion-card-title>
             <ion-card-subtitle>{{ item.message }}</ion-card-subtitle>
             <p>
-              <small>Posted in {{ item.date }} by <strong>{{ item.user }}</strong></small>
+              <small>Fotografada em {{ item.date }} por <strong>{{ item.user }}</strong></small>
             </p>
           </ion-card-content>
           <ion-row class="">
             <ion-col size="12">
-              <ion-button
-                *ngIf="item.local != ''"
-                expand="small"
-                fill="clear"
-                shape="round"
-                color="danger"
-                (click)="showMap(item.local)"
-              >
+              <ion-button *ngIf="item.local != ''" expand="small" fill="clear" shape="round" color="danger"
+                (click)="showMap(item.local)">
                 <ion-icon slot="start" name="pin"></ion-icon> Ver no mapa
               </ion-button>
             </ion-col>

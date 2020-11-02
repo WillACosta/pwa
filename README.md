@@ -1,24 +1,26 @@
-# Aplicação PWA desenvolvida com ionic, angular e firebase:
+<h1 align="center">PWA App</h1>
+<p align-"center">
+  <img src="https://i.imgur.com/7nVoGco.jpg" />
+</p>
 
- Ionic 5
- Angular 8
- Angular Fire
- Apache Cordova 2
+Aplicação Progressive Web App (PWA) desenvolvida com ionic, angular e firebase, tire uma fotografia e escolha algum filtro para ela, faça uma descrição e marque a sua localização.
 
-# Tecnologias utilizadas #
+# Tecnologias utilizadas
 
-Acesso nativo à camera do dispositivo
-Acesso à local (GPS)
-Push Notification
-Working offline
+- Angular
+- Ionic
+- Firebase
+- Apache Cordova
 
-# I. Instalar as dependências
+- Acesso nativo à camera do dispositivo
+- Acesso à local (GPS)
+- Push Notification
+- Working offline
 
- Admitindo que já tenha o Node.js instalado:
+## Execução
 
- $ npm install
- $ npm install -g cordova ionic
+    Necessário ter o Node.js instalado
 
-Execute o projeto com:
-
-$ ionic cordova run browser
+- Em um terminal de sua preferência
+  - Instale as dependências com `npm i && npm i -g cordova ionic && npm i -g native-run`
+  - Execute a aplicação com `ionic cordova run browser`
